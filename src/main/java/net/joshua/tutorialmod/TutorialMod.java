@@ -1,6 +1,7 @@
 package net.joshua.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.joshua.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,6 +22,8 @@ public class TutorialMod
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus); //Enregistre tous les objets de notre mod
 
 
         modEventBus.addListener(this::commonSetup);
